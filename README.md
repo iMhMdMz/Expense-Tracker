@@ -1,169 +1,169 @@
-# 💰 Expense Tracker
+# 💰 ردیاب هزینه
 
-A modern, responsive web application to track your daily expenses with categorization and analytics.
+یک برنامه وب مدرن و پاسخ‌گو برای ردیابی هزینه‌های روزمره با قابلیت دسته‌بندی و تجزیه‌و‌تحلیل.
 
-## Features
+## ویژگی‌ها
 
-✨ **Key Features:**
-- ✅ Add expenses with date, amount, category, and description
-- 📊 View total expenses and category breakdown
-- 🔍 Filter expenses by category
-- 📈 Sort expenses by date or amount
-- 🏷️ 8 predefined expense categories with emojis
-- 💾 Local storage persistence (data saves automatically)
-- 📱 Fully responsive design (desktop, tablet, mobile)
-- 🎨 Modern UI with smooth animations
-- 🗑️ Delete individual expenses or clear all
-- 📋 Beautiful expense list with table view
+✨ **ویژگی‌های اصلی:**
+- ✅ افزودن هزینه‌ها با تاریخ، مبلغ، دسته‌بندی و توضیحات
+- 📊 مشاهده کل هزینه‌ها و تفکیک بر اساس دسته‌بندی
+- 🔍 فیلتر کردن هزینه‌ها بر اساس دسته‌بندی
+- 📈 مرتب‌سازی هزینه‌ها بر اساس تاریخ یا مبلغ
+- 🏷️ 8 دسته‌بندی پیش‌فرض با ایموجی
+- 💾 ذخیره خودکار داده‌ها در حافظه محلی
+- 📱 طراحی کاملا پاسخ‌گو (رایانه، تبلت، موبایل)
+- 🎨 رابط کاربری مدرن با انیمیشن‌های هموار
+- 🗑️ حذف هزینه‌های انفرادی یا حذف تمام آن‌ها
+- 📋 فهرست زیبای هزینه‌ها با نمای جدولی
 
-## Categories
+## دسته‌بندی‌ها
 
-The app includes the following expense categories:
-- 🍔 Food
-- 🚗 Transport
-- 🎬 Entertainment
-- 💡 Utilities
-- 🏥 Healthcare
-- 🛍️ Shopping
-- 📚 Education
-- 📌 Other
+برنامه شامل دسته‌بندی‌های هزینه زیر است:
+- 🍔 غذا
+- 🚗 حمل‌ونقل
+- 🎬 تفریح
+- 💡 رفاه‌خدمات
+- 🏥 بهداشت و درمان
+- 🛍️ خرید
+- 📚 آموزش
+- 📌 سایر
 
-## How to Use
+## نحوه استفاده
 
-### Installation
+### نصب
 
-1. Clone the repository:
+1. مخزن را کلون کنید:
 ```bash
 git clone https://github.com/yourusername/expense-tracker.git
 cd expense-tracker
 ```
 
-2. Open `index.html` in your web browser
+2. فایل `index.html` را در مرورگر خود باز کنید
 
-That's it! No installation or build process needed. The app runs entirely in the browser.
+بس! نصب یا فرآیند ساخت لازم نیست. برنامه به‌طور کامل در مرورگر اجرا می‌شود.
 
-### Adding an Expense
+### افزودن هزینه
 
-1. Fill in the expense form:
-   - **Date**: Select the date of the expense
-   - **Amount**: Enter the expense amount in dollars
-   - **Category**: Choose a category from the dropdown
-   - **Description**: Add an optional description
+1. فرم هزینه را پر کنید:
+   - **تاریخ**: تاریخ هزینه را انتخاب کنید
+   - **مبلغ**: میزان هزینه را به تومان وارد کنید
+   - **دسته‌بندی**: یک دسته‌بندی از فهرست انتخاب کنید
+   - **توضیحات**: توضیحات اختیاری اضافه کنید
 
-2. Click "Add Expense" button
+2. دکمه "افزودن هزینه" را کلیک کنید
 
-3. The expense will be added to your list and data will be saved automatically
+3. هزینه به فهرست شما اضافه می‌شود و داده‌ها خودکار ذخیره می‌شوند
 
-### Viewing Expenses
+### مشاهده هزینه‌ها
 
-- **Total Expenses**: View the sum of all expenses at the top
-- **Category Count**: See how many different categories you have
-- **Transaction Count**: Check the total number of transactions
+- **مجموع هزینه‌ها**: مجموع تمام هزینه‌ها را در بالا مشاهده کنید
+- **تعداد دسته‌بندی‌ها**: ببینید چند دسته‌بندی مختلف دارید
+- **تعداد تراکنش‌ها**: کل تعداد تراکنش‌ها را بررسی کنید
 
-### Filtering & Sorting
+### فیلتر کردن و مرتب‌سازی
 
-- **Filter by Category**: Select a category to view only those expenses
-- **Sort Options**:
-  - Latest First (default)
-  - Oldest First
-  - Highest Amount
-  - Lowest Amount
+- **فیلتر بر اساس دسته‌بندی**: یک دسته‌بندی را انتخاب کنید تا فقط آن هزینه‌ها را ببینید
+- **گزینه‌های مرتب‌سازی**:
+  - اخیرترین اول (پیش‌فرض)
+  - قدیمی‌ترین اول
+  - بیشترین مبلغ
+  - کمترین مبلغ
 
-### Category Breakdown
+### تفکیک بر اساس دسته‌بندی
 
-A summary showing the total amount spent in each category is displayed above the expense table for quick insights.
+خلاصه‌ای نشان می‌دهد کل میزان هزینه در هر دسته‌بندی برای بررسی سریع.
 
-## Data Storage
+## ذخیره داده‌ها
 
-All data is stored in your browser's **local storage**, which means:
-- ✅ Your data persists even after closing the browser
-- ✅ Your data is stored locally (not on any server)
-- ✅ No account login required
-- ⚠️ Clearing browser data will delete all expenses
+تمام داده‌ها در **حافظه محلی** مرورگر شما ذخیره می‌شوند، به این معنی:
+- ✅ داده‌های شما حتی بعد از بستن مرورگر باقی می‌مانند
+- ✅ داده‌های شما به‌طور محلی ذخیره می‌شوند (روی سرور نیستند)
+- ✅ نیاز به ورود حساب کاربری نیست
+- ⚠️ پاک کردن داده‌های مرورگر تمام هزینه‌ها را حذف خواهد کرد
 
-## Browser Compatibility
+## سازگاری مرورگر
 
-Works on all modern browsers:
+بر روی تمام مرورگرهای مدرن کار می‌کند:
 - ✅ Chrome/Chromium
 - ✅ Firefox
 - ✅ Safari
 - ✅ Edge
 - ✅ Opera
 
-## Project Structure
+## ساختار پروژه
 
 ```
 expense-tracker/
-├── index.html      # Main HTML structure
-├── styles.css      # Styling and responsive design
-├── app.js          # JavaScript functionality
-├── README.md       # Documentation
-└── .gitignore      # Git ignore file
+├── index.html      # ساختار HTML اصلی
+├── styles.css      # طراحی و تطبیق پاسخ‌گو
+├── app.js          # عملکرد JavaScript
+├── README.md       # مستندات
+└── .gitignore      # فایل Git ignore
 ```
 
-## Technologies Used
+## فناوری‌های استفاده‌شده
 
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Modern styling with Grid, Flexbox, and animations
-- **JavaScript (Vanilla)**: Pure JavaScript, no frameworks or dependencies
-- **Local Storage API**: For data persistence
+- **HTML5**: نشانه‌گذاری معنایی و ساختار
+- **CSS3**: طراحی مدرن با Grid، Flexbox و انیمیشن‌ها
+- **JavaScript (Vanilla)**: JavaScript خالص، بدون فریم‌ورک یا وابستگی
+- **Local Storage API**: برای تخزین داده‌ها
 
-## Features Breakdown
+## تفصیل ویژگی‌ها
 
-### 1. Expense Management
-- Add new expenses with validation
-- Delete individual expenses with confirmation
-- Clear all expenses with safety confirmation
+### 1. مدیریت هزینه‌ها
+- افزودن هزینه‌های جدید با اعتبار‌سنجی
+- حذف هزینه‌های انفرادی با تایید
+- حذف تمام هزینه‌ها با تایید ایمنی
 
-### 2. Analytics
-- Real-time total calculation
-- Category-wise spending breakdown
-- Transaction count tracking
+### 2. تجزیه‌و‌تحلیل
+- محاسبه کل در زمان واقعی
+- تفکیک هزینه بر اساس دسته‌بندی
+- ردیابی تعداد تراکنش
 
-### 3. Filtering & Sorting
-- Filter by category
-- Sort by date (ascending/descending)
-- Sort by amount (ascending/descending)
+### 3. فیلتر کردن و مرتب‌سازی
+- فیلتر بر اساس دسته‌بندی
+- مرتب‌سازی بر اساس تاریخ (صعودی/نزولی)
+- مرتب‌سازی بر اساس مبلغ (صعودی/نزولی)
 
-### 4. User Experience
-- Smooth animations and transitions
-- Notification system for user feedback
-- Empty state messaging
-- Responsive design for all screen sizes
-- Color-coded category badges
+### 4. تجربه کاربر
+- انیمیشن‌ها و انتقالات هموار
+- سیستم اطلاع‌رسانی برای بازخورد کاربر
+- پیام‌های حالت خالی
+- طراحی پاسخ‌گو برای تمام اندازه‌های صفحه
+- نشانه‌های دسته‌بندی رنگ‌شده
 
-## Future Enhancements
+## بهبودهای آینده
 
-Possible features for future versions:
-- 💾 Export data as CSV/PDF
-- 📅 Monthly/yearly reports
-- 📊 Data visualization (charts/graphs)
-- 🎯 Budget setting and alerts
-- 🌙 Dark mode toggle
-- 🔐 Password protection
-- ☁️ Cloud sync support
-- 📱 Mobile app version
+ویژگی‌های احتمالی برای نسخه‌های آینده:
+- 💾 صادر کردن داده‌ها به CSV/PDF
+- 📅 گزارش‌های ماهانه/سالانه
+- 📊 تصور داده‌ها (نمودارها/گرافیک‌ها)
+- 🎯 تعیین بودجه و هشدارها
+- 🌙 تغییر حالت شب
+- 🔐 حفاظت با رمز
+- ☁️ پشتیبانی از رفع‌ابهام ابری
+- 📱 نسخه برنامه موبایل
 
-## License
+## مجوز
 
-This project is open source and available under the MIT License.
+این پروژه متن‌باز است و تحت مجوز MIT در دسترس است.
 
-## Contributing
+## مشارکت
 
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+مشارکت از شما استقبال می‌شود! می‌توانید:
+1. مخزن را fork کنید
+2. یک شاخه ویژگی ایجاد کنید
+3. تغییرات خود را انجام دهید
+4. درخواست pull ارائه دهید
 
-## Author
+## نویسنده
 
-Created with ❤️ for expense tracking enthusiasts.
+با ❤️ برای علاقه‌مندان ردیابی هزینه ساخته شد.
 
-## Support
+## پشتیبانی
 
-If you encounter any issues or have suggestions, please create an issue on GitHub.
+اگر با مشکلی مواجه شدید یا پیشنهادی دارید، لطفاً در GitHub مسئله ایجاد کنید.
 
 ---
 
-**Happy Expense Tracking! 💸**
+**ردیابی هزینه خوش‌آمد! 💸**

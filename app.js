@@ -39,29 +39,29 @@ class ExpenseTracker {
         document.getElementById('date').valueAsDate = new Date();
 
         // Show success message
-        this.showNotification('Expense added successfully!', 'success');
+        this.showNotification('هزینه با موفقیت اضافه شد!', 'success');
     }
 
     deleteExpense(id) {
-        if (confirm('Are you sure you want to delete this expense?')) {
+        if (confirm('آیا مطمئن هستید که می‌خواهید این هزینه را حذف کنید؟')) {
             this.expenses = this.expenses.filter(exp => exp.id !== id);
             this.saveToLocalStorage();
             this.render();
-            this.showNotification('Expense deleted!', 'success');
+            this.showNotification('هزینه حذف شد!', 'success');
         }
     }
 
     clearAllExpenses() {
         if (this.expenses.length === 0) {
-            alert('No expenses to clear!');
+            alert('هیچ هزینه‌ای برای حذف وجود ندارد!');
             return;
         }
 
-        if (confirm('Are you sure you want to delete all expenses? This cannot be undone.')) {
+        if (confirm('آیا مطمئن هستید که می‌خواهید تمام هزینه‌ها را حذف کنید؟ این عمل برگشت‌پذیر نیست.')) {
             this.expenses = [];
             this.saveToLocalStorage();
             this.render();
-            this.showNotification('All expenses cleared!', 'success');
+            this.showNotification('تمام هزینه‌ها حذف شدند!', 'success');
         }
     }
 
@@ -114,13 +114,13 @@ class ExpenseTracker {
 
     formatDate(dateString) {
         const date = new Date(dateString + 'T00:00:00');
-        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        return date.toLocaleDateString('fa-IR', { year: 'numeric', month: 'short', day: 'numeric' });
     }
 
     formatCurrency(amount) {
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat('fa-IR', {
             style: 'currency',
-            currency: 'USD',
+            currency: 'IRR',
         }).format(amount);
     }
 
@@ -136,6 +136,20 @@ class ExpenseTracker {
             Other: '📌',
         };
         return emojis[category] || '📌';
+    }
+
+    getCategoryLabel(category) {
+        const labels = {
+            Food: 'غذا',
+            Transport: 'حمل‌ونقل',
+            Entertainment: 'تفریح',
+            Utilities: 'رفاه‌خدمات',
+            Healthcare: 'بهداشت و درمان',
+            Shopping: 'خرید',
+            Education: 'آموزش',
+            Other: 'سایر',
+        };
+        return labels[category] || category;
     }
 
     render() {
@@ -161,15 +175,16 @@ class ExpenseTracker {
             return;
         }
 
-        let html = '<h3>Category Breakdown</h3><div class="category-list">';
+        let html = '<h3>تفکیک بر اساس دسته‌بندی</h3><div class="category-list">';
 
         Object.entries(summary)
             .sort((a, b) => b[1] - a[1])
             .forEach(([category, amount]) => {
                 const emoji = this.getCategoryEmoji(category);
+                const label = this.getCategoryLabel(category);
                 html += `
                     <div class="category-item">
-                        <strong>${emoji} ${category}</strong>
+                        <strong>${emoji} ${label}</strong>
                         <span>${this.formatCurrency(amount)}</span>
                     </div>
                 `;
@@ -184,7 +199,7 @@ class ExpenseTracker {
         const container = document.getElementById('expensesContainer');
 
         if (filtered.length === 0) {
-            container.innerHTML = '<p class="empty-message">No expenses to display.</p>';
+            container.innerHTML = '<p class="empty-message">هیچ هزینه‌ای برای نمایش وجود ندارد.</p>';
             return;
         }
 
@@ -192,11 +207,11 @@ class ExpenseTracker {
             <table class="expenses-table">
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Amount</th>
-                        <th>Action</th>
+                        <th>تاریخ</th>
+                        <th>توضیحات</th>
+                        <th>دسته‌بندی</th>
+                        <th>مبلغ</th>
+                        <th>عملیات</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -204,14 +219,15 @@ class ExpenseTracker {
 
         filtered.forEach(expense => {
             const emoji = this.getCategoryEmoji(expense.category);
+            const label = this.getCategoryLabel(expense.category);
             html += `
                 <tr>
                     <td>${this.formatDate(expense.date)}</td>
                     <td>${this.escapeHtml(expense.description || '-')}</td>
-                    <td><span class="category-badge ${expense.category}">${emoji} ${expense.category}</span></td>
+                    <td><span class="category-badge ${expense.category}">${emoji} ${label}</span></td>
                     <td class="amount-cell">${this.formatCurrency(expense.amount)}</td>
                     <td class="action-cell">
-                        <button class="btn btn-danger" onclick="expenseTracker.deleteExpense(${expense.id})">Delete</button>
+                        <button class="btn btn-danger" onclick="expenseTracker.deleteExpense(${expense.id})">حذف</button>
                     </td>
                 </tr>
             `;
